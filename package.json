@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gherkin-testcafe chrome features/**/*.js features/**/*.feature --tags @regression"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   "devDependencies": {
     "@cucumber/cucumber": "^8.3.1",
     "cucumber": "^6.0.7",
-    "testcafe": "^1.19.0"
+    "gherkin-testcafe": "^5.4.3",
+    "testcafe": "^1.18.0"
   }
 }

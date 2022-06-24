@@ -1,6 +1,6 @@
 import HomePage from "./pages/home-page";
 
-// Factor class to provision M2A Media UI pages
+// Factory class to provision M2A Media UI pages
 class M2aMediaUI {
     static home() {
         return new HomePage;

@@ -5,6 +5,7 @@ const passwordInput = Selector('input').withAttribute('data-testid', 'auth-login
 const loginButton = Selector('button').withAttribute('data-testid', 'login-button');
 
 const adminUser = Role('https://stable.m2acloud.com/ui/auth', async t => {
+    // NOTE: Credentials hard-coded for demo; ideally should be read from keyvault on cloud
     await t
         .typeText(emailInput, 'admin')
         .typeText(passwordInput, 'admin')

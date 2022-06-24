@@ -1,4 +1,4 @@
-import { admin } from "../roles"
+import { adminUser } from "../roles"
 import { Selector, t } from 'testcafe'
 
 class HomePage {
@@ -10,7 +10,11 @@ class HomePage {
     }
 
     async visit() {
-        await t.useRole(admin);
+        await this.visitAsUser(adminUser);
+    }
+
+    async visitAsUser(role) {
+        await t.useRole(role);
     }
 
     getWelcomeMessage() {

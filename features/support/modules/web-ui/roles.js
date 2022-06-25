@@ -1,18 +1,19 @@
 import { Role, Selector } from 'testcafe';
+import { getBaseUrl, getUiUserVariables } from "../../../../config/envconfig"
 
 const emailInput = Selector('input').withAttribute('data-testid', 'auth-login-email');
 const passwordInput = Selector('input').withAttribute('data-testid', 'auth-login-password');
 const loginButton = Selector('button').withAttribute('data-testid', 'login-button');
 
-const adminUser = Role('https://stable.m2acloud.com/ui/auth', async t => {
+const adminUser = Role(getBaseUrl(), async t => {
     // NOTE: Credentials hard-coded for demo; ideally should be read from keyvault on cloud
     await t
-        .typeText(emailInput, 'admin')
-        .typeText(passwordInput, 'admin')
+        .typeText(emailInput, getUiUserVariables().username)
+        .typeText(passwordInput, getUiUserVariables().password)
         .click(loginButton);
 });
 
-const unauthorizedUser = Role('https://stable.m2acloud.com/ui/auth', async t => {
+const unauthorizedUser = Role(getBaseUrl(), async t => {
     await t
         .typeText(emailInput, 'invalidUser')
         .typeText(passwordInput, 'invalidPassword')

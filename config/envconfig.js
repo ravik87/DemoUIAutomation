@@ -4,8 +4,6 @@ dotenv.config();
 const ENV_NAME = process.env.ENV_NAME;
 
 function getBaseUrl() {
-  console.log("Loaded environment: " + ENV_NAME);
-
   if (ENV_NAME == "prod") return "https://stable.m2acloud.com/ui/auth";
 
   return "https://" + ENV_NAME + ".m2acloud.com/ui/auth";

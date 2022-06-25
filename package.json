@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "gherkin-testcafe chrome features/**/*.js features/**/*.feature --tags @regression"
+    "test": "gherkin-testcafe chrome features/**/*.js features/**/*.feature --tags @regression --reporter cucumber-json && npm run report",
+    "report": "node report-generator.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,10 @@
     "cucumber": "^6.0.7",
     "dotenv": "^16.0.1",
     "gherkin-testcafe": "^5.4.3",
+    "multiple-cucumber-html-reporter": "^1.21.4",
     "testcafe": "^1.18.0"
+  },
+  "dependencies": {
+    "testcafe-reporter-cucumber-json": "^6.3.0"
   }
 }

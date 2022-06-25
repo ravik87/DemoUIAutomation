@@ -1,14 +1,14 @@
-import { faker } from '@faker-js/faker';
+import { faker } from "@faker-js/faker";
 
 // Faker class to provision random data
 class Faker {
-    static randomUsername() {
-        return faker.internet.userName();
-    }
+  static randomUsername() {
+    return faker.internet.userName();
+  }
 
-    static randomPassword() {
-        return faker.internet.password();
-    }
+  static randomPassword() {
+    return faker.internet.password();
+  }
 }
 
-export default Faker
+export default Faker;

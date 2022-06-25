@@ -1,10 +1,10 @@
 // Sample health endpoint
 class HealthEndpoint {
-    #healthEndpoint = "/health";
+  #healthEndpoint = "/health";
 
-    getHealth() {
-        // TODO: Send get request to health endpoint
-    }
+  getHealth() {
+    // TODO: Send get request to health endpoint
+  }
 }
 
-export default HealthEndpoint
+export default HealthEndpoint;

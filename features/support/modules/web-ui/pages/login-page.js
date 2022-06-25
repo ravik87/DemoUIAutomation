@@ -1,18 +1,19 @@
-import { Selector } from 'testcafe'
+import { Selector } from "testcafe";
 
 class LoginPage {
+  #errorTextSelector;
 
-    #errorTextSelector;
+  constructor() {
+    this.#errorTextSelector = Selector("span").withAttribute(
+      "data-testid",
+      "error-text"
+    ); // assumed for demo
+  }
 
-    constructor() {
-        this.#errorTextSelector = Selector('span').withAttribute('data-testid', 'error-text'); // assumed for demo
-    }
-
-    getErrorMessage() {
-        return "Invalid username or password." // hardcoded for demo
-        // return this.#errorTextSelector.textContent();
-    }
-
+  getErrorMessage() {
+    return "Invalid username or password."; // hardcoded for demo
+    // return this.#errorTextSelector.textContent();
+  }
 }
 
-export default LoginPage
+export default LoginPage;

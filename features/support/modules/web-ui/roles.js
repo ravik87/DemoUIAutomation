@@ -1,5 +1,6 @@
 import { Role, Selector } from 'testcafe';
 import { getBaseUrl, getUiUserVariables } from "../../../../config/envconfig"
+import Faker from "../../general/utils/faker"
 
 const emailInput = Selector('input').withAttribute('data-testid', 'auth-login-email');
 const passwordInput = Selector('input').withAttribute('data-testid', 'auth-login-password');
@@ -15,8 +16,8 @@ const adminUser = Role(getBaseUrl(), async t => {
 
 const unauthorizedUser = Role(getBaseUrl(), async t => {
     await t
-        .typeText(emailInput, 'invalidUser')
-        .typeText(passwordInput, 'invalidPassword')
+        .typeText(emailInput, Faker.randomUsername())
+        .typeText(passwordInput, Faker.randomPassword())
         .click(loginButton);
 });
 

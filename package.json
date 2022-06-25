@@ -28,9 +28,7 @@
     "dotenv": "^16.0.1",
     "gherkin-testcafe": "^5.4.3",
     "multiple-cucumber-html-reporter": "^1.21.4",
-    "testcafe": "^1.18.0"
-  },
-  "dependencies": {
+    "testcafe": "^1.18.0",
     "testcafe-reporter-cucumber-json": "^6.3.0"
   }
 }
